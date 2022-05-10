@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include "Log.h"
+#include "ServiceManager.h"
 
 using namespace std;
 

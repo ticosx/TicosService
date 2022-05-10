@@ -1,6 +1,7 @@
 #ifndef DisplayService_h
 #define DisplayService_h
 
+#include <Arduino.h>
 #include "Service.h"
 #include "XRender.h"
 /*!
@@ -16,5 +17,5 @@ protected:
   XRenderer* renderer;
 };
 
-#include "DisplayService.inl"
+// #include "DisplayService.inl"
 #endif // DisplayService_h

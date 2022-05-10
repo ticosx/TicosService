@@ -28,5 +28,5 @@ protected:
   ServiceType type;
 };
 
-#include "Service.inl"
+// #include "Service.inl"
 #endif // Service_h

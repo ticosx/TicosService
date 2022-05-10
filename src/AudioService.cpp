@@ -1,3 +1,5 @@
+#include "AudioService.h"
+
 AudioService::AudioService(AudioAdapter* audioAdapter) : Service(AUDIO_SERVICE){
   this->audioAdapter = audioAdapter;
 }
@@ -24,4 +26,8 @@ bool AudioService::setVolume(int8_t volume) {
  */
 int8_t AudioService::getVolume() {
   return this->volume;
+}
+
+AudioAdapter* AudioService::getAudioAdpater(){
+  return this->audioAdapter;
 }

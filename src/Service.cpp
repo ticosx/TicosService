@@ -1,3 +1,5 @@
+#include "Service.h"
+
 /*!
  *    @brief  创建一个服务
  *    @param  type 服务类型
