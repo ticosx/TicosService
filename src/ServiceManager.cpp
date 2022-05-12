@@ -18,9 +18,9 @@ ServiceManager::ServiceManager(){
  */
 void ServiceManager::registerService(Service* service) {
   ServiceType type = service->getType();
-  debug("ServiceManager", "Register service %p type %d", service, type);
+  logDebug("Register service %p type %d", service, type);
   if(type<0 || type>=SERVICE_COUNT){
-    error("ServiceManager", "Invalid service type %d", type);
+    logErr("Invalid service type %d", type);
     throw std::invalid_argument("Invalid service type");
   }
   getInstance()->services[type] = service;
@@ -34,7 +34,7 @@ void ServiceManager::registerService(Service* service) {
 void ServiceManager::unregisterService(Service* service) {
   ServiceType type = service->getType();
   if(type<0 || type>=SERVICE_COUNT){
-    error("ServiceManager", "Invalid service type %d", type);
+    logErr("Invalid service type %d", type);
     throw std::invalid_argument("Invalid service type");
   }
   getInstance()->services[type] = NULL;
@@ -68,10 +68,10 @@ void ServiceManager::init() {
 Service* ServiceManager::getService(ServiceType type) {
 
   if(type<0 || type>=SERVICE_COUNT){
-    error("ServiceManager", "Invalid service type %d", type);
+    logErr("Invalid service type %d", type);
     throw std::invalid_argument("Invalid service type");
   }
   Service* svc = getInstance()->services[type];
-  debug("ServiceManager", "Get service: %d %p", (int)type, svc);
+  logDebug("Get service: %d %p", (int)type, svc);
   return svc;
 }
