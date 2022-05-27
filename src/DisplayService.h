@@ -10,12 +10,14 @@
 
 class DisplayService : public Service {
 public:
-  DisplayService(XRenderer* renderer);
-  XRenderer* getRenderer();
-
-protected:
-  XRenderer* renderer;
+  DisplayService();
+  virtual ~DisplayService(){};
+/*!
+ *    @brief  设置亮度
+ *    @param  light 要设置的亮度值。最亮为 100， 最小为 0
+ *    @return 设置成功则返回 true
+ */
+  virtual bool setLight(uint8_t light) {return true;}
 };
 
-// #include "DisplayService.inl"
 #endif // DisplayService_h

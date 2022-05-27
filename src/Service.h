@@ -21,6 +21,7 @@ typedef enum {
 class Service {
 public:
   Service(ServiceType type);
+  virtual ~Service(){};
   ServiceType getType();
 
 protected:

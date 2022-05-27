@@ -12,6 +12,7 @@
 class AudioService : public Service {
 public:
   AudioService(AudioAdapter* audioAdapter);
+  virtual ~AudioService(){};
 
 /*!
  *    @brief  设置音量
